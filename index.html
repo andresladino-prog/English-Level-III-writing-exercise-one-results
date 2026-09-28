@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Level III — Resultados Environmental Writing</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <p class="eyebrow">Environmental Challenges · English Level III</p>
+  <h1>Consulta tus resultados</h1>
+  <p class="subtitle">Evaluative Writing Task · Prof. Andrés Ladino</p>
+</header>
+
+<main>
+
+  <!-- ============ SCREEN 1: LOGIN ============ -->
+  <section id="screen-login" class="screen card">
+    <h2>Ingresa tus datos</h2>
+    <p>Para ver tus resultados, ingresa el mismo correo institucional y código estudiantil que usaste al enviar el ejercicio.</p>
+
+    <form id="form-login" novalidate>
+      <label for="studentCode">Código estudiantil</label>
+      <input type="text" id="studentCode" name="studentCode" required autocomplete="off"
+             autocapitalize="off" autocorrect="off" spellcheck="false" />
+
+      <label for="email">Correo institucional (@correounivalle.edu.co)</label>
+      <input type="email" id="email" name="email" required autocomplete="email"
+             autocapitalize="off" autocorrect="off" spellcheck="false"
+             placeholder="tu.nombre@correounivalle.edu.co" />
+
+      <p id="login-error" class="error-message" role="alert" aria-live="polite"></p>
+
+      <button type="submit" id="btn-login">Ver mis resultados</button>
+    </form>
+  </section>
+
+  <!-- ============ SCREEN 2: CARGANDO ============ -->
+  <section id="screen-loading" class="screen card hidden">
+    <h2>Buscando tus resultados…</h2>
+    <p>Un momento por favor.</p>
+  </section>
+
+  <!-- ============ SCREEN 3: RESULTADOS ============ -->
+  <section id="screen-results" class="screen hidden">
+
+    <div class="card student-header">
+      <p class="eyebrow-small">Resultados de</p>
+      <h2 id="res-name">—</h2>
+      <p class="student-meta">
+        Código: <span id="res-code">—</span> · Correo: <span id="res-email">—</span> ·
+        Palabras del texto original: <span id="res-words">—</span>
+      </p>
+    </div>
+
+    <div class="card final-grade-card">
+      <p class="eyebrow-small">Nota final</p>
+      <p class="final-grade" id="res-final-grade">—</p>
+      <p class="final-grade-sub">sobre 5.0</p>
+    </div>
+
+    <div class="card">
+      <h2>Desglose por criterio</h2>
+      <div id="criteria-list"><!-- se llena con JS --></div>
+    </div>
+
+    <div class="card">
+      <h2>Tu texto original</h2>
+      <p class="submission-text" id="res-submission">—</p>
+    </div>
+
+    <p class="disclaimer">Esta retroalimentación es formativa y se basa en el texto que enviaste; los ejemplos de lenguaje sugeridos no reemplazan tu redacción original.</p>
+
+    <button type="button" id="btn-logout" class="secondary">Consultar otro resultado</button>
+
+  </section>
+
+  <!-- ============ SCREEN 4: NO ENCONTRADO ============ -->
+  <section id="screen-notfound" class="screen card hidden">
+    <h2>No encontramos ese resultado</h2>
+    <p>Verifica que el correo y el código sean exactamente los mismos que usaste al enviar el ejercicio.</p>
+    <p>Si el problema continúa, contacta directamente a tu profesor.</p>
+    <button type="button" id="btn-retry" class="secondary">Intentar de nuevo</button>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Universidad del Valle · Escuela de Ciencias del Lenguaje · English Level III</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
